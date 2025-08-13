@@ -1,3 +1,9 @@
+/*
+fetchParseJson,splitString->utils.go
+NewConfig->config.go
+Vk*->vk.go
+*/
+
 package main
 
 import (
@@ -23,6 +29,10 @@ const VK_GROUP_URL = "https://api.vk.com/method/messages.getConversationMembers?
 
 func main() {
 	var conf = NewConfig()
+	if conf.Sferum.REMIXDSID == "" || conf.Sferum.CHAT == "" {
+		fmt.Println("Отсутствуют обязательные переменные файла .env")
+		os.Exit(1)
+	}
 	jar, _ := cookiejar.New(nil)
 	var cookies []*http.Cookie
 	cookie := &http.Cookie{
@@ -83,5 +93,5 @@ func main() {
 		os.Exit(1)
 	}
 	defer file.Close()
-	file.WriteString(strings.ReplaceAll(tf.RenderCSV(), "\\", ""))
+	file.WriteString(tf.RenderCSV())
 }

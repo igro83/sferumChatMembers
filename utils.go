@@ -27,7 +27,7 @@ func fetchParseJson(client *http.Client, url string, structToParse interface{}) 
 
 	data, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return fmt.Errorf("ошибка чтения тела: %w", err)
+		return fmt.Errorf("ошибка чтения ответа сервера: %w", err)
 	}
 
 	if err := json.Unmarshal(data, structToParse); err != nil {
