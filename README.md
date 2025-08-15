@@ -23,8 +23,8 @@ cd sferumChatMembers
 go mod download
 ```
 ### Заполните файл .env.example с вашими данными.
-Заполните в файле .env.example строку REMIXDSID= данными из браузера - cookies remixdsid с сайта мессенджера web.vk.com
-Заполните в файле .env.example строку CHAT= данными из адресной строки браузера, при переходе на сайте web.vk.com в нужный чат
+Заполните в файле .env.example строку REMIXDSID= данными из браузера - cookies remixdsid с сайта мессенджера web.vk.me
+Заполните в файле .env.example строку CHAT= данными из адресной строки браузера, при переходе на сайте web.vk.me в нужный чат
 
 ### Переименуйте .env.example в .env
 
